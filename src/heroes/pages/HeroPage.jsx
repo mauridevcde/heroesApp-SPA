@@ -10,8 +10,24 @@ export const HeroPage = () => {
   }
 
   return (
-    <div>
-      <h1>Hero</h1>;
+    <div className="row mt-5">
+      <div className="col-4">
+        <img src={`/assets/${id}.jpg`} alt={hero.id}  className="img-thumbnail"/>
+      </div>
+      <div className="col-8">
+        <h3>{hero.superhero}</h3>
+        <ul className="list-group list-group-flush">
+            <li className="list-group-item">
+              <b>Alter Ego:</b> {hero.alter_ego} 
+            </li>
+            <li className="list-group-item">
+              <b>Publisher:</b> {hero.publisher} 
+            </li>
+            <li className="list-group-item">
+              <b>First Appareance:</b> {hero.first_appearance} 
+            </li>
+        </ul>
+      </div>
     </div>
   );
 };
