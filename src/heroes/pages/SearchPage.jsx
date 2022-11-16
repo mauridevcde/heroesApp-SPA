@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { HeroCards } from "../components";
 import queryString from "query-string";
-
+ 
 import { getHeroByName } from "../helpers";
 
 export const SearchPage = () => {
@@ -32,7 +32,7 @@ export const SearchPage = () => {
         <div className="col-5">
           <h4>Searching</h4>
           <hr />
-          <form onSubmit={onSearchSubmit}>
+          <form onSubmit={onSearchSubmit} data-testid="searchForm">
             <input
               type="text"
               placeholder="Search a Hero"
@@ -52,7 +52,7 @@ export const SearchPage = () => {
             <div className="alert alert-primary">search a hero</div>
           ) : (
             heroes.length === 0 && (
-              <div className="alert alert-danger">
+              <div className="alert alert-danger" aria-label="alert-danger">
                 No hero whith <b>{q}</b>
               </div>
             )
